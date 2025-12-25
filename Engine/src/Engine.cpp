@@ -53,7 +53,7 @@ void Engine::run(IGame* game)
 		CoreSystems::Get().subSystem->update();
 		CoreSystems::Get().renderer->draw();
 
-		if (CoreSystems::Get().subSystem->shouldClose())
+		if (CoreSystems::Get().subSystem->shouldClose() || CoreSystems::Get().subSystem->getKeyState(Escape))
 		{
 			game->tryToStop();
 		}

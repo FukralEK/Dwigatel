@@ -17,9 +17,12 @@ public:
 	bool shouldClose() override;
 
 	dwiVec::Vec2 getCursor() override;
+	bool getKeyState(KeyboardKey key) override;
 
 	bool getMouseClick(MouseButton button) override;
 private:
+	int toGlfwKey(KeyboardKey key);
+
 	GLFWwindow* window = nullptr;
 
 	SubSystemConfig config;
